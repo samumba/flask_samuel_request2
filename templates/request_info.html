@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Информация о запросе</h2>
+
+<h3>Параметры URL</h3>
+<ul>
+    <li>param1: {{ param1 }}</li>
+    <li>param2: {{ param2 }}</li>
+    <li>param3: {{ param3 }}</li>
+    <li>param4: {{ param4 }}</li>
+</ul>
+
+<hr>
+
+<h3>Заголовки (Headers)</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Название заголовка</th>
+            <th>Значение</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in headers.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<hr>
+
+<h3>Cookies (не менее 10)</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Имя cookie</th>
+            <th>Значение</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in cookies.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

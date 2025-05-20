@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Заголовки запроса</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+  h1 { color: #2c3e50; }
+  .headers-list {
+    background: white; 
+    border-radius: 8px; 
+    padding: 15px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: auto;
+  }
+  .headers-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .headers-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  .headers-list li:nth-child(odd) {
+    background-color: #fefefe;
+  }
+  .header-key {
+    font-weight: 700;
+    color: #34495e;
+    max-width: 40%;
+    word-break: break-word;
+  }
+  .header-value {
+    color: #7f8c8d;
+    max-width: 55%;
+    word-break: break-word;
+    text-align: right;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+  <h1>Заголовки запроса</h1>
+  <div class="headers-list">
+    <ul>
+      {% for key, value in headers.items() %}
+      <li>
+        <div class="header-key">{{ key }}</div>
+        <div class="header-value">{{ value }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

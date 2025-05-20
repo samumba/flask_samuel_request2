@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Request Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Request Viewer</a>
+    <div class="navbar-nav">
+      <a class="nav-link" href="/url-params?name=Иван&age=25&city=Москва">Параметры URL</a>
+      <a class="nav-link" href="/headers">Заголовки запроса</a>
+      <a class="nav-link" href="/cookies">Cookie</a>
+      <a class="nav-link" href="/login">Форма авторизации</a>
+      <a class="nav-link" href="/phone-verify">Phone Verify</a>
+
+    </div>
+  </div>
+</nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
